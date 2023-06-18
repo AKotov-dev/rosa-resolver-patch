@@ -7,4 +7,4 @@ The resolver is probably incorrectly configured in the ROSA Linux distribution. 
 ```
 After the uninstall, the files are returned by default.
 
-**Note:** similar files from distributions using `systemd-resolved` (Lubuntu, Mint) were taken as a sample. After installing the patch, `/etc/resolv.conf` starts updating correctly. This allows you to use, for example, Cloudflare (TM) WARP; see [warpgui](https://github.com/AKotov-dev/warpgui).
+**Note:** similar files from distributions using `systemd-resolved` (LUbuntu, Mint) were taken as a sample. After installing the patch, `/etc/resolv.conf` starts updating correctly. This allows you to use, for example, Cloudflare (TM) WARP; see [warpgui](https://github.com/AKotov-dev/warpgui).
