@@ -1,0 +1,71 @@
+[NAME]
+name=rosa-resolver-patch
+
+[VERSION]
+version=0.1
+
+[RELEASE]
+release=0.mrx8
+
+[GROUP]
+group=Accessibility
+
+[DESCRIPTION]
+0=ROSA resolver patch
+1=---
+2=More information: /usr/share/doc/package_name/repack.txt
+
+[MAINTAINER]
+maintainer=Alex Kotov
+
+[VENDOR]
+vendor=alex_q_2000 (C) 2023
+
+[SUMMARY]
+summary=ROSA resolver patch
+
+[URLCOPY]
+urlcopy=none
+
+[LICENSE]
+license=GPLv3
+
+[DEPS]
+deps=
+
+[META]
+meta=0
+
+[NOARCH]
+noarch=1
+
+[DEB]
+deb=0
+
+[FILES]
+0=/etc/rosa-resolver-patch/
+
+[AFTERINSTALL]
+0=#!/bin/bash
+1=
+2=tar xvzf /etc/rosa-resolver-patch/rosa_fixed.tar.gz -C /
+
+[BEFOREREMOVE]
+0=#!/bin/bash
+1=
+2=#Окончательное удаление
+3=if [ $1 -eq 0 ]; then
+4=tar xvzf /etc/rosa-resolver-patch/rosa_original.tar.gz -C /
+5=fi
+
+[URL32]
+url32=
+
+[PROGRAMNAME]
+programname=
+
+[DEVTOOL]
+devtool=
+
+[TOOLVERSION]
+toolversion=
