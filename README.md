@@ -4,6 +4,8 @@ The resolver is probably incorrectly configured in the ROSA Linux distribution. 
 /etc/nsswitch.conf
 /etc/systemd/resolved.conf
 /etc/NetworkManager/NetworkManager.conf
+rm -f /etc/resolv.conf
+ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 ```
 After the uninstall, the files are returned by default.
 

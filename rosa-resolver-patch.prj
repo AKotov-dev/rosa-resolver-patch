@@ -2,7 +2,7 @@
 name=rosa-resolver-patch
 
 [VERSION]
-version=0.1
+version=0.2
 
 [RELEASE]
 release=0.mrx8
@@ -49,6 +49,9 @@ deb=0
 0=#!/bin/bash
 1=
 2=tar xvzf /etc/rosa-resolver-patch/rosa_fixed.tar.gz -C /
+3=rm -f /etc/resolv.conf
+4=ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+5=systemctl restart NetworkManager systemd-resolved
 
 [BEFOREREMOVE]
 0=#!/bin/bash
