@@ -1,7 +1,8 @@
 # rosa-resolver-patch
-The resolver is probably incorrectly configured in the ROSA Linux distribution. To fix the flaw, this rpm-patch was made. Files are replaced during installation:
+The resolver is probably incorrectly configured in the ROSA Linux distribution. To fix the flaw, this rpm-patch was made.
 + `Network Manager 1.36.6` is installed first
 + `rosa-resolver-patch` is installed next
+Files are replaced during installation:
 ```
 /etc/nsswitch.conf
 /etc/systemd/resolved.conf
