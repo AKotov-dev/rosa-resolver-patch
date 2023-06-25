@@ -19,4 +19,4 @@ The resolver is probably incorrectly configured in the ROSA Linux distribution. 
 ```
 After the uninstall, the files are returned by default.
 
-**Note:** Additionally, the patch eliminates **DNS leaks**, since by default, ROSA `FallbackDNS` uses unreliable `Yandex` DNS servers. Patch allows you to use, for example, Cloudflare (TM) WARP (see [warpgui](https://github.com/AKotov-dev/warpgui)) or other VPNs are safe.
+**Note:** Additionally, the patch eliminates **DNS leaks**, since by default, ROSA `FallbackDNS` uses unreliable `Yandex` DNS servers. Patch allows you to use, for example, Cloudflare (TM) WARP (see [warpgui](https://github.com/AKotov-dev/warpgui)) or VPNs are safe.
