@@ -3,13 +3,20 @@ The resolver is probably incorrectly configured in the ROSA Linux distribution. 
   
 Files are replaced during installation:
 ```
-/etc/nsswitch.conf
-/etc/systemd/resolved.conf
-/run/systemd/resolve/stub-resolv.conf
-/etc/NetworkManager/NetworkManager.conf
-ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-systemctl restart NetworkManager systemd-resolved
+--- resolved.conf
++++ resolved.conf
+@@ -20,8 +20,8 @@
+ # Google:     8.8.8.8#dns.google 8.8.4.4#dns.google 2001:4860:4860::8888#dns.google 2001:4860:4860::8844#dns.google
+ # Quad9:      9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
+ #DNS=
+-#FallbackDNS=77.88.8.8 77.88.8.1 8.8.8.8 8.8.4.4
+-#Domains=
++FallbackDNS=9.9.9.9 149.112.112.112 2620:fe::fe 2620:fe::9
++Domains=~.
+ #DNSSEC=no
+ #DNSOverTLS=no
+ #MulticastDNS=resolve
 ```
 After the uninstall, the files are returned by default.
 
-**Note:** similar files from distributions using `systemd-resolved` (LUbuntu, Mint) were taken as a sample. After installing the patch, `/etc/resolv.conf` starts updating correctly. This allows you to use, for example, Cloudflare (TM) WARP; see [warpgui](https://github.com/AKotov-dev/warpgui).  
+**Note:** Additionally, the patch eliminates DNS leaks, since by default `FallbackDNS` uses unreliable DNS servers from Yandex. Patch allows you to use, for example, Cloudflare (TM) WARP; see [warpgui](https://github.com/AKotov-dev/warpgui) or other VPNs are safe.
