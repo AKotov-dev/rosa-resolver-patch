@@ -17,6 +17,6 @@ The resolver is probably incorrectly configured in the ROSA Linux distribution.
  #DNSOverTLS=no
  #MulticastDNS=resolve
 ```
-After the uninstall, the file `/etc/systemd/resolved.conf` are returned by default.
-
-**Note:** Additionally, the patch eliminates **DNS leaks**, since by default, ROSA `FallbackDNS` uses unreliable `Yandex` DNS servers. Patch allows you to use, for example, Cloudflare (TM) WARP (see [warpgui](https://github.com/AKotov-dev/warpgui)) or VPNs securely.
+After the uninstall, the file `/etc/systemd/resolved.conf` are returned by default.  
+  
+**Note:** Additionally, the patch eliminates **DNS leaks**, since by default, ROSA `FallbackDNS` uses unreliable `Yandex` DNS servers. Patch allows you to use, for example, Cloudflare (TM) WARP (see [warpgui](https://github.com/AKotov-dev/warpgui)) or VPNs securely. Tested in ROSA-12.4-PLASMA/XFCE.
