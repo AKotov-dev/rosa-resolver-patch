@@ -1,5 +1,5 @@
 # rosa-resolver-patch
-The resolver is probably incorrectly configured in the ROSA Linux distribution. To fix the flaw, this rpm-patch was made.  
+The resolver is probably incorrectly configured in the ROSA Linux distribution.  
   
 /etc/systemd/resolved.conf.patch
 ```
