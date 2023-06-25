@@ -1,9 +1,6 @@
 # rosa-resolver-patch
-The resolver is probably incorrectly configured in the ROSA Linux distribution. To fix the flaw, this rpm-patch was made.
-+ Update the system
-+ `Network Manager 1.36.6` is installed first
-+ `rosa-resolver-patch` is installed next  
-
+The resolver is probably incorrectly configured in the ROSA Linux distribution. To fix the flaw, this rpm-patch was made.  
+  
 Files are replaced during installation:
 ```
 /etc/nsswitch.conf
@@ -16,5 +13,3 @@ systemctl restart NetworkManager systemd-resolved
 After the uninstall, the files are returned by default.
 
 **Note:** similar files from distributions using `systemd-resolved` (LUbuntu, Mint) were taken as a sample. After installing the patch, `/etc/resolv.conf` starts updating correctly. This allows you to use, for example, Cloudflare (TM) WARP; see [warpgui](https://github.com/AKotov-dev/warpgui).  
-  
-**Forecast for ROSA:** without the GLIBC update, the overall situation with the distribution will worsen.
