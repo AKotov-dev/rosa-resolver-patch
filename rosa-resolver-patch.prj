@@ -57,7 +57,7 @@ deb=0
 1=
 2=#Окончательное удаление
 3=if [ $1 -eq 0 ]; then
-4=cd /etc/systemd; patch -R resolved.conf.patch
+4=cd /etc/systemd; patch -Ri resolved.conf.patch
 5=systemctl restart NetworkManager systemd-resolved
 6=fi
 
