@@ -49,7 +49,7 @@ deb=0
 0=#!/bin/bash
 1=
 2=cd /etc/systemd; patch -Ni resolved.conf.patch
-3=systemctl restart NetworkManager systemd-resolved
+3=systemctl restart NetworkManager
 
 [BEFOREREMOVE]
 0=#!/bin/bash
@@ -57,7 +57,7 @@ deb=0
 2=#Окончательное удаление
 3=if [ $1 -eq 0 ]; then
 4=cd /etc/systemd; patch -Ri resolved.conf.patch
-5=systemctl restart NetworkManager systemd-resolved
+5=systemctl restart NetworkManager
 6=fi
 
 [URL32]
