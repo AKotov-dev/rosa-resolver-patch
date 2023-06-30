@@ -49,8 +49,7 @@ deb=0
 0=#!/bin/bash
 1=
 2=cd /etc/systemd; patch -Ni resolved.conf.patch
-3=ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-4=systemctl restart NetworkManager systemd-resolved
+3=systemctl restart NetworkManager systemd-resolved
 
 [BEFOREREMOVE]
 0=#!/bin/bash
